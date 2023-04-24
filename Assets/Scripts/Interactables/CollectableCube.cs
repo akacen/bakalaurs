@@ -21,6 +21,5 @@ public class CollectableCube : Interactable
     {
         base.Interact();
         Destroy(gameObject);
-       // Instantiate(particle, transform.position, Quaternion.identity);
     }
 }
