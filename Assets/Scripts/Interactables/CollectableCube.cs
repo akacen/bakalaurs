@@ -21,5 +21,6 @@ public class CollectableCube : Interactable
     {
         base.Interact();
         Destroy(gameObject);
+       // UIManager.updateFoundCount();
     }
 }
