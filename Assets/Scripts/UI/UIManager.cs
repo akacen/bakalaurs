@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
+
 
 public class UIManager : MonoBehaviour
 {
@@ -10,10 +12,12 @@ public class UIManager : MonoBehaviour
 
     // [SerializeField]
     // private TextMeshProUGUI objFoundCount;
-    private int objCount = 0;
+    private static int objCount;
+    public static int gameEndScene = 2;
     // Start is called before the first frame update
     void Start()
     {
+        objCount = 0;
         objFoundCount.text = objCount + "/10";
     }
 
@@ -22,8 +26,19 @@ public class UIManager : MonoBehaviour
     {
         objFoundCount.text = objCount + "/10";
     }
-    public void updateFoundCount()
+    public static void UpdateFoundCount()
     {
-        objCount ++;
+        if (objCount < 10)
+        {
+            objCount ++;
+        } else {
+            objCount = 0;
+            EndGame();
+        }
+    }
+
+    public static void EndGame()
+    {
+        SceneManager.LoadScene(gameEndScene);
     }
 }

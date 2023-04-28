@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CollectableCube : Interactable
+public class Timer : MonoBehaviour
 {
-    GameObject particle;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +14,5 @@ public class CollectableCube : Interactable
     void Update()
     {
         
-    }
-
-    protected override void Interact()
-    {
-        base.Interact();
-        Destroy(gameObject);
-        UIManager.UpdateFoundCount();
     }
 }

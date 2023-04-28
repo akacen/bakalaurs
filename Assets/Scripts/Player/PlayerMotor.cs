@@ -32,7 +32,7 @@ public class PlayerMotor : MonoBehaviour
         playerVelocity.y += gravity * Time.deltaTime;
         if (isGrounded && playerVelocity.y < 0)
             playerVelocity.y = -2f;
-        controller .Move(playerVelocity * Time.deltaTime);
+        controller.Move(playerVelocity * Time.deltaTime);
     }
 
     public void Jump()
