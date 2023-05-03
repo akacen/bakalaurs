@@ -9,9 +9,6 @@ public class UIManager : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI objFoundCount;
-
-    // [SerializeField]
-    // private TextMeshProUGUI objFoundCount;
     private static int objCount;
     public static int gameEndScene = 2;
     // Start is called before the first frame update
@@ -28,11 +25,11 @@ public class UIManager : MonoBehaviour
     }
     public static void UpdateFoundCount()
     {
-        if (objCount < 10)
+        if (objCount < 2)
         {
             objCount ++;
         } else {
-            objCount = 0;
+            objCount = 10;
             EndGame();
         }
     }
