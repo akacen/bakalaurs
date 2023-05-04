@@ -5,20 +5,15 @@ using TMPro;
 
 public class HighScoreDisplay : MonoBehaviour
 {
+
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI scoreText;
-    public HighScoreDisplay[] highScoreDisplayArray;
-    List<HighScoreEntry> scores = new List<HighScoreEntry>();
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        AddNewScore("John", 4500);
-        AddNewScore("Max", 5520);
-        AddNewScore("Dave", 380);
-        AddNewScore("Steve", 6654);
-        AddNewScore("Mike", 11021);
-        AddNewScore("Teddy", 3252);
+
     }
 
     // Update is called once per frame
@@ -26,26 +21,7 @@ public class HighScoreDisplay : MonoBehaviour
     {
         
     }
-
-    void UpdateHighScoreDisplay()
-    {
-        scores.Sort((HighScoreEntry x, HighScoreEntry y) => y.playerScore.CompareTo(x.playerScore));
-        for (int i = 0; i < highScoreDisplayArray.Length; i++)
-        {
-            if (i < scores.Count)
-            {
-                highScoreDisplayArray[i].DisplayHighScore(scores[i].playerName, scores[i].playerScore);
-            }
-            else
-            {
-                highScoreDisplayArray[i].HideEntryDisplay();
-            }
-        }
-    }
-    void AddNewScore(string entryName, float entryScore)
-    {
-        scores.Add(new HighScoreEntry {playerName = entryName , playerScore = entryScore});
-    }
+    
     public void DisplayHighScore(string nameToDisplay, float scoreToDisplay)
     {
         nameText.text = nameToDisplay;
