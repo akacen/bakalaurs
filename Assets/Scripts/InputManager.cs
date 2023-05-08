@@ -9,7 +9,7 @@ public class InputManager : MonoBehaviour
     public PlayerInput.OnFootActions onFoot;
     private PlayerMotor motor;
     private PlayerLook look;
-    // Start is called before the first frame update
+    // Awake is called when the script instance is being loaded.
     void Awake()
     {
         playerInput = new PlayerInput();
@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
         onFoot.Jump.performed += ctx => motor.Jump();
     }
 
-    // Update is called once per frame
+    // Frame-rate independent MonoBehaviour.FixedUpdate message for physics calculations.
     void FixedUpdate()
     {
         // tell the player motor to move using the value from movement action

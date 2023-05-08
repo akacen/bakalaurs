@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class CollectableItem : Interactable
 {
-    GameObject particle;
+    [SerializeField]
+    private TextMeshProUGUI itemText;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +24,6 @@ public class CollectableItem : Interactable
         base.Interact();
         Destroy(gameObject);
         UIManager.UpdateFoundCount();
+        itemText.color = Color.grey;
     }
 }

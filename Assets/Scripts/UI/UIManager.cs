@@ -15,21 +15,21 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         objCount = 0;
-        objFoundCount.text = objCount + "/10";
+        objFoundCount.text = objCount + "/9";
     }
 
     // Update is called once per frame
     void Update()
     {
-        objFoundCount.text = objCount + "/10";
+        objFoundCount.text = objCount + "/9";
     }
     public static void UpdateFoundCount()
     {
-        if (objCount < 2)
+        if (objCount < 8)
         {
             objCount ++;
         } else {
-            objCount = 10;
+            objCount = 9;
             EndGame();
         }
     }
