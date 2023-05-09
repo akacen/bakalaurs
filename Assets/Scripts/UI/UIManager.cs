@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.SceneManagement;
+
 
 
 public class UIManager : MonoBehaviour
@@ -11,7 +11,15 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI objFoundCount;
     private int objCount;
-    public int gameEndScene;
+
+    public GameObject panel;
+    private LevelManager lvlManager;
+
+    void Awake()
+    {
+        lvlManager = panel.GetComponent<LevelManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,12 +39,7 @@ public class UIManager : MonoBehaviour
             objCount ++;
         } else {
             objCount = 9;
-            EndGame();
+            lvlManager.RevealInfo();
         }
-    }
-
-    public void EndGame()
-    {
-        SceneManager.LoadScene(gameEndScene);
     }
 }

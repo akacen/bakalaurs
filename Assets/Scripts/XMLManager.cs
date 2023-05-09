@@ -1,10 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Xml.Serialization;
+using System.IO;
 
-public class CurrentScore : MonoBehaviour
+public class XMLManager : MonoBehaviour
 {
-    
+    public static XMLManager instance;
+    void Awake()
+    {
+        instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {

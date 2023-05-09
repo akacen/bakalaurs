@@ -21,6 +21,7 @@ public class MenuManager : MonoBehaviour
     }
     public static void QuitGame() 
     {
+        PlayerPrefs.DeleteKey("CurrentScoreText");
         Application.Quit();
     }
 

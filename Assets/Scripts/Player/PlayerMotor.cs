@@ -11,6 +11,15 @@ public class PlayerMotor : MonoBehaviour
     public float gravity = -9.8f;
     public float jumpHeight = 2f;
 
+    [SerializeField]
+    private GameObject panel;
+    private LevelManager lvlManager;
+
+    void Awake()
+    {
+        lvlManager = panel.GetComponent<LevelManager>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -41,5 +50,11 @@ public class PlayerMotor : MonoBehaviour
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -3 * gravity);
         }
+    }
+
+    void OnTriggerEnter(Collider otherObject)
+    {
+        Debug.Log("Collision " + otherObject.gameObject.name);
+        lvlManager.EndGame();
     }
 }

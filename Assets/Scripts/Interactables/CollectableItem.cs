@@ -7,12 +7,12 @@ public class CollectableItem : Interactable
 {
     [SerializeField]
     private TextMeshProUGUI itemText;
-    public GameObject infoPanel;
+    public GameObject panel;
     private UIManager uiManager;
     // Awake is called when the script instance is being loaded.
     void Awake()
     {
-        uiManager = infoPanel.GetComponent<UIManager>();
+        uiManager = panel.GetComponent<UIManager>();
     }
 
     // Update is called once per frame
