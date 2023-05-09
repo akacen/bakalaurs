@@ -7,10 +7,12 @@ public class CollectableItem : Interactable
 {
     [SerializeField]
     private TextMeshProUGUI itemText;
-    // Start is called before the first frame update
-    void Start()
+    public GameObject infoPanel;
+    private UIManager uiManager;
+    // Awake is called when the script instance is being loaded.
+    void Awake()
     {
-        
+        uiManager = infoPanel.GetComponent<UIManager>();
     }
 
     // Update is called once per frame
@@ -23,7 +25,7 @@ public class CollectableItem : Interactable
     {
         base.Interact();
         Destroy(gameObject);
-        UIManager.UpdateFoundCount();
+        uiManager.UpdateFoundCount();
         itemText.color = Color.grey;
     }
 }

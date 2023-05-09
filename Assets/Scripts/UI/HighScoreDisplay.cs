@@ -9,7 +9,6 @@ public class HighScoreDisplay : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI scoreText;
     
-
     // Start is called before the first frame update
     void Start()
     {

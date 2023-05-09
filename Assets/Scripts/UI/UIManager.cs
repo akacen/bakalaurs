@@ -7,10 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
+    //UI Manager for Sample scene UI
     [SerializeField]
     private TextMeshProUGUI objFoundCount;
-    private static int objCount;
-    public static int gameEndScene = 2;
+    private int objCount;
+    public int gameEndScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +24,7 @@ public class UIManager : MonoBehaviour
     {
         objFoundCount.text = objCount + "/9";
     }
-    public static void UpdateFoundCount()
+    public void UpdateFoundCount()
     {
         if (objCount < 8)
         {
@@ -34,7 +35,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public static void EndGame()
+    public void EndGame()
     {
         SceneManager.LoadScene(gameEndScene);
     }

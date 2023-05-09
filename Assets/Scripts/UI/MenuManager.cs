@@ -7,18 +7,12 @@ using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
+    //Game manager for start and end scenes
     public int gameStartScene;
-    // [SerializeField]
-    // private TextMeshProUGUI currentScoreText;
-
-    // private float gameEndTime;
 
     void Start()
     {
-        // gameEndTime = Time.time;
-        // // Debug.Log(gameEndTime.ToString());
-        // Timer.Instance.DisplayTime(gameEndTime, currentScoreText);
-        // Debug.Log(Time.time);
+
     }
 
     public void StartGame()

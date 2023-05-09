@@ -5,17 +5,11 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-
-    public static Timer Instance {get; private set; }
     public TextMeshProUGUI timerText;
     private float timeNow;
     public bool countDown;
     private float hours, minutes, seconds;
 
-    private void Awake()
-    {
-        Instance = this;
-    }
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +20,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         //if counting down, it will remove time every frame, if counting up - it will add time.
+        //allows to make two different game modes - limited time or fastest player.
         timeNow = countDown ? timeNow -= Time.deltaTime : timeNow += Time.deltaTime;
         DisplayTime(timeNow, timerText);
     }
