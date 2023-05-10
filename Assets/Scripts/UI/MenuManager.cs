@@ -10,19 +10,15 @@ public class MenuManager : MonoBehaviour
     //Game manager for start and end scenes
     public int gameStartScene;
 
-    void Start()
-    {
-
-    }
-
     public void StartGame()
     {
         SceneManager.LoadScene(gameStartScene);
+    //    Cursor.visible = false;
     }
     public static void QuitGame() 
     {
-        PlayerPrefs.DeleteKey("CurrentScoreText");
-        Application.Quit();
+        Cursor.visible = true;
+    //    Application.Quit();
     }
 
 }

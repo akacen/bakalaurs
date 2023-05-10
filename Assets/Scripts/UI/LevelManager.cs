@@ -41,5 +41,6 @@ public class LevelManager : MonoBehaviour
         PlayerPrefs.SetString("CurrentScoreText", timer.timerText.text);
         PlayerPrefs.SetFloat("CurrentScoreFloat", timer.timeNow);
         SceneManager.LoadScene(gameEndScene);
+        Cursor.visible = true;
     }
 }

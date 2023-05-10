@@ -6,20 +6,41 @@ using System.IO;
 
 public class XMLManager : MonoBehaviour
 {
+    public Leaderboard leaderboard;
     public static XMLManager instance;
     void Awake()
     {
         instance = this;
+        if (!Directory.Exists(Application.persistentDataPath + "/HighScores/"))
+        {
+            Directory.CreateDirectory(Application.persistentDataPath + "/HighScores/");
+        }
     }
-    // Start is called before the first frame update
-    void Start()
+    
+    public void SaveScores(List<HighScoreEntry> scoresToSave)
     {
-        
+        leaderboard.hsList = scoresToSave;
+        XmlSerializer serializer = new XmlSerializer(typeof(Leaderboard));
+        FileStream stream = new FileStream(Application.persistentDataPath + "/HighScores/highscores.xml", FileMode.Create);
+        serializer.Serialize(stream, leaderboard);
+        stream.Close();
     }
 
-    // Update is called once per frame
-    void Update()
+    public List<HighScoreEntry> LoadScores()
     {
-        
+        if (File.Exists(Application.persistentDataPath + "/HighScores/highscores.xml"))
+        {
+            XmlSerializer serializer = new XmlSerializer(typeof(Leaderboard));
+            FileStream stream = new FileStream(Application.persistentDataPath + "/HighScores/highscores.xml", FileMode.Open);
+            leaderboard = serializer.Deserialize(stream) as Leaderboard;
+        }
+        return leaderboard.hsList;
     }
+}
+
+[System.Serializable]
+public class Leaderboard
+{
+    //holds highscore data when it's saved or loaded
+    public List<HighScoreEntry> hsList = new List<HighScoreEntry>();
 }

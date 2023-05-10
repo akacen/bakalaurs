@@ -11,7 +11,6 @@ public class HighScores : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI currentScoreText;
-
     private string currentScoreString;
     private float CurrentScoreFloat;
     // Start is called before the first frame update
@@ -21,6 +20,8 @@ public class HighScores : MonoBehaviour
         currentScoreString = PlayerPrefs.GetString("CurrentScoreText");
         CurrentScoreFloat = PlayerPrefs.GetFloat("CurrentScoreFloat");
         currentScoreText.text = "Your score: " + currentScoreString;
+        LoadHighScores();
+        UpdateHighScoreDisplay();
     }
 
     // Update is called once per frame
@@ -43,9 +44,21 @@ public class HighScores : MonoBehaviour
             }
         }
     }
+
     public void AddNewScore()
     {
         scores.Add(new HighScoreEntry {playerName = inputField.text, playerScore = CurrentScoreFloat});
         UpdateHighScoreDisplay();
+        SaveHighScores();
+    }
+
+    void SaveHighScores()
+    {
+        XMLManager.instance.SaveScores(scores);
+    }
+
+    void LoadHighScores()
+    {
+        scores = XMLManager.instance.LoadScores();
     }
 }
