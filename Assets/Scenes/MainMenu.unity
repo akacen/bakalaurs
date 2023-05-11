@@ -673,11 +673,14 @@ MonoBehaviour:
     To
     interatct and pick up objects use key e
 
+    Find all the objects listed at the
+    bottom of the screen
+
     Your perfomance is timed
 
 
-    may
-    the fastest player win!'
+    may the fastest player
+    win!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6763f5e7bfc9b4843914be659fa58a50, type: 2}
   m_sharedMaterial: {fileID: 8750044568868960407, guid: 6763f5e7bfc9b4843914be659fa58a50, type: 2}

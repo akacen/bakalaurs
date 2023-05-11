@@ -6,7 +6,7 @@ public class PlayerInteract : MonoBehaviour
 {
     private Camera cam;
     [SerializeField]
-    private float distance = 3f;
+    private float distance = 4f;
     [SerializeField]
     private LayerMask mask;
     private InputManager inputManager;

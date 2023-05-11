@@ -17,8 +17,8 @@ public class MenuManager : MonoBehaviour
     }
     public static void QuitGame() 
     {
-        Cursor.visible = true;
-    //    Application.Quit();
+    //    Cursor.visible = true;
+        Application.Quit();
     }
 
 }

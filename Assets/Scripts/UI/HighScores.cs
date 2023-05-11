@@ -54,6 +54,7 @@ public class HighScores : MonoBehaviour
 
     void SaveHighScores()
     {
+        Debug.Log("Saved to file");
         XMLManager.instance.SaveScores(scores);
     }
 

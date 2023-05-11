@@ -34,7 +34,7 @@ public class UIManager : MonoBehaviour
     }
     public void UpdateFoundCount()
     {
-        if (objCount < 8)
+        if (objCount < 2)
         {
             objCount ++;
         } else {
