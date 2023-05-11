@@ -434,7 +434,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 800, y: 300}
+  m_SizeDelta: {x: 800, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375879767
 MonoBehaviour:
@@ -459,19 +459,19 @@ MonoBehaviour:
   m_text: 'Welcome!
 
 
-    To move around use your mouse and keys W,A,S,D
+    To move around use your mouse and keys "W,A,S,D"
 
     To
-    interatct and pick up objects use key e
+    interatct and pick up objects use key "E"
 
-    Find all the objects listed at the
-    bottom of the screen
+    Find all the objects listed at
+    the bottom of the screen
 
     Your perfomance is timed
 
 
-    may the fastest player
-    win!'
+    May the fastest
+    player win!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6763f5e7bfc9b4843914be659fa58a50, type: 2}
   m_sharedMaterial: {fileID: 8750044568868960407, guid: 6763f5e7bfc9b4843914be659fa58a50, type: 2}
@@ -504,7 +504,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 2
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
@@ -512,7 +512,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: 20
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4

@@ -54,7 +54,6 @@ public class PlayerMotor : MonoBehaviour
 
     void OnTriggerEnter(Collider otherObject)
     {
-        Debug.Log("Collision " + otherObject.gameObject.name);
         lvlManager.EndGame();
     }
 }

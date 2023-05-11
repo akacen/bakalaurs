@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
+
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     private GameObject gameManager;
     private Timer timer;
     public int gameEndScene;
+
 
     void Awake()
     {
@@ -27,7 +28,7 @@ public class LevelManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     
     public void RevealInfo()
