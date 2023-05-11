@@ -4,8 +4,6 @@ using UnityEngine;
 
 public abstract class Interactable : MonoBehaviour
 {
-    //message displayed to player when looking at something they can interact with
-    public string promtMessage;
     // function to be called from player
     public void BaseInteract()
     {
