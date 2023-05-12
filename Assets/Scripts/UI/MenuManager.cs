@@ -28,5 +28,4 @@ public class MenuManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Confined;
         }
     }
-
 }

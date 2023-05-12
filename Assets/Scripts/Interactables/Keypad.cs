@@ -7,6 +7,7 @@ public class Keypad : Interactable
     [SerializeField]
     private GameObject door;
     private bool isDoorOpen;
+    public AudioClip audioClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,7 @@ public class Keypad : Interactable
     protected override void Interact()
     {
         base.Interact();
+        AudioSource.PlayClipAtPoint(audioClip, transform.position);
         isDoorOpen = !isDoorOpen;
         door.GetComponent<Animator>().SetBool("isOpen", isDoorOpen);
     }
