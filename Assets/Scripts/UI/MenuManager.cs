@@ -7,6 +7,10 @@ public class MenuManager : MonoBehaviour
 {
     //Game manager for start and end scenes
     public int gameStartScene;
+    void Awake()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+    }
 
     void Start()
     {

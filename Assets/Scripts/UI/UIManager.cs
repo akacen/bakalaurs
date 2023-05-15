@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     void Awake()
     {
         lvlManager = panel.GetComponent<LevelManager>();
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Start is called before the first frame update
@@ -45,6 +46,14 @@ public class UIManager : MonoBehaviour
         } else {
             objCount = 9;
             lvlManager.RevealInfo();
+        }
+    }
+
+        void OnApplicationFocus(bool hasFocus)
+    {
+        if (hasFocus)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }
